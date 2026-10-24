@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: locabike_source
+    project: databird-508807
+    dataset: LocaBike
+    tables:
+      - name: customers
+      - name: orders
+      - name: products
+      - name: stores
