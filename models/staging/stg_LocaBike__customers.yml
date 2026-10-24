@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: stg_locabike__customers
+    description: ""
+    columns:
+      - name: customer_id
+        data_type: int64
+        description: "clé primaire entre table customers et table orders"
+        tests:
+          - unique
+          - not_null
+
+
+      - name: last_name
+        data_type: string
+        description: ""
+
+      - name: city
+        data_type: string
+        description: "ville du clients"
+
+      - name: state
+        data_type: string
+        description: "état US du client"
+
+      - name: zip_code
+        data_type: int64
+        description: "code postale du client"

@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: stg_locabike__stocks
+    description: "Table indiquant le stocks chaque produit du magasin Locabike."
+    columns:
+      - name: store_id
+        data_type: int64
+        description: "clé entre les tables stocks et store"
+        tests:
+          - unique
+          - not_null
+
+      - name: product_id
+        data_type: int64
+        description: "clé entre les tables stocks et product"
+        tests:
+          - unique
+          - not_null
+
+      - name: quantity
+        data_type: int64
+        description: "Stocks disponibles."

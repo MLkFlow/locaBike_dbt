@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: stg_LocaBike__stores
+  - name: stg_locabike__stores
+    description: "Table listant les différents points de vente de Locabike."
+    columns:
+      - name: store_id
+        data_type: int64
+        description: "clé entre table stores et stocks "
+        tests:
+          - unique
+          - not_null
+
+      - name: store_name
+        data_type: string
+        description: "Nom de la boutique."
+
+      - name: city
+        data_type: string
+        description: "Ville dans laquelle se situe le magasin."
+
+      - name: state
+        data_type: string
+        description: "État de localisation du magasin."

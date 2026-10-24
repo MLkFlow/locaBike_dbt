@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: stg_LocaBike__categories
+    description: ""
+    columns:
+      - name: category_id
+        description: "clé primaire entre categories et products"
+        tests:
+          - unique
+          - not_null
+
+      - name: category_name
+        description: "nom de la catégorie de bike"

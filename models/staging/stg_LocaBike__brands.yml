@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: stg_locabike__brands
+    description: ""
+    columns:
+      - name: brand_id
+        data_type: int64
+        description: "Id de la marque"
+        tests:
+          - unique
+          - not_null
+
+      - name: brand_name
+        data_type: string
+        description: "marque"

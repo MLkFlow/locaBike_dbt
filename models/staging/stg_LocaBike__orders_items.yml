@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: stg_locabike__orders_items
+    description: "tables des ordres par items"
+    columns:
+      - name: order_id
+        data_type: int64
+        description: "clé primaire entre tables orders_items et order"
+        tests:
+          - unique
+          - not_null
+
+      - name: item_id
+        data_type: int64
+        description: ""
+
+      - name: product_id
+        data_type: int64
+        description: "clé primaire entre tables orders_items et products"
+        tests:
+          - unique
+          - not_null
+
+      - name: quantity
+        data_type: int64
+        description: ""
+
+      - name: list_price
+        data_type: float64
+        description: ""
+
+      - name: discount
+        data_type: float64
+        description: ""

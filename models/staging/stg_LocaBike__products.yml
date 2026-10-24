@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: stg_locabike__products
+    description: "Table des produits (vélos et accessoires) de Locabike."
+    columns:
+      - name: product_id
+        data_type: int64
+        description: "clé entre les tables product - order_items -stocks"
+        tests:
+          - unique
+          - not_null
+
+      - name: product_name
+        data_type: string
+        description: "Nom commercial du produit."
+
+      - name: brand_id
+        data_type: int64
+        description: "clé entres tables product et brands"
+        tests:
+          - unique
+
+      - name: category_id
+        data_type: int64
+        description: "clé entres tables product et vategories"
+        tests:
+          - unique
+
+      - name: model_year
+        data_type: int64
+        description: "Année de sortie du modèle de produit"
+
+      - name: list_price
+        data_type: float64
+        description: "Prix de vente"
