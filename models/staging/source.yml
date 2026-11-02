@@ -13,4 +13,5 @@ sources:
       - name: stocks
       - name: categories
       - name: brands
+      - name: staffs
 

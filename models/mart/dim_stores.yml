@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: dim_stores
+    description: "Table de dimension finale listant les magasins de l'enseigne LocaBike."
+    columns:
+      - name: store_id
+        description: "Clé primaire unique du magasin."
+        tests:
+          - unique
+          - not_null
+
+      - name: store_name
+        description: "Nom commercial du magasin."
+        tests:
+          - not_null
+
+      - name: email
+        description: "Adresse email de contact du magasin."
+
+      - name: city
+        description: "Ville où est situé le magasin."
+        tests:
+          - not_null

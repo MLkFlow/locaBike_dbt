@@ -1,0 +1,78 @@
+version: 2
+
+models:
+  - name: fct_order_items
+    description: "Table de faits centrale consolidant les ventes au niveau de chaque commande. Elle contient les clés de jointure vers les dimensions et les métriques financières calculées."
+    columns:
+      - name: order_id
+        description: "Identifiant de la commande."
+        tests:
+          - not_null
+
+      - name: item_id
+        description: "Identifiant de la ligne de l'item commandé."
+        tests:
+          - not_null
+
+      - name: customer_id
+        description: "Clé étrangère reliant la vente à la dimension dim_customers."
+        tests:
+          - not_null
+
+      - name: product_id
+        description: "Clé étrangère reliant la vente à la dimension dim_products."
+        tests:
+          - not_null
+
+      - name: store_id
+        description: "Clé étrangère reliant la vente à la dimension dim_stores."
+        tests:
+          - not_null
+
+      - name: order_status
+        description: "Statut actuel de la commande."
+        tests:
+          - not_null
+
+      - name: order_date
+        description: "Date de création de la commande."
+        tests:
+          - not_null
+
+      - name: required_date
+        description: "Date de livraison prévue."
+        tests:
+          - not_null
+
+      - name: shipped_date
+        description: "Date d'expédition de la commande."
+
+      - name: quantity
+        description: "Quantité d'articles achetée."
+        tests:
+          - not_null
+
+      - name: price
+        description: "Prix unitaire de l'article."
+        tests:
+          - not_null
+
+      - name: discount
+        description: "Taux de remise appliqué à la commande)."
+        tests:
+          - not_null
+
+      - name: amount
+        description: "Montant brut théorique de la commande avant remise (quantity * price)."
+        tests:
+          - not_null
+
+      - name: discount_amount
+        description: "Montant total de la remise de la commande (quantity * price * discount)."
+        tests:
+          - not_null
+
+      - name: net_amount
+        description: "Montant net payé par le client pour la commande."
+        tests:
+          - not_null

@@ -2,6 +2,7 @@ select
 store_id,
 store_name,
 city,
-state
+state,
+email
 FROM {{ source('LocaBike','stores') }}
 

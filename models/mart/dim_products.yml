@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: dim_products
+    description: "Table de dimension finale contenant le catalogue complet des produits avec leurs marques et catégories."
+    columns:
+      - name: product_id
+        description: "Clé primaire unique du produit."
+        tests:
+          - unique
+          - not_null
+
+      - name: product_name
+        description: "Nom du produit."
+        tests:
+          - not_null
+
+      - name: brand_name
+        description: "Nom de la marque du produit."
+        tests:
+          - not_null
+
+      - name: category_name
+        description: "Nom de la catégorie du produit."
+        tests:
+          - not_null
+
+      - name: model_year
+        description: "Année du modèle du produit."
+        tests:
+          - not_null
+
+      - name: price
+        description: "Prix de vente du produit."
+        tests:
+          - not_null

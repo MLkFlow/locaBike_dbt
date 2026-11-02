@@ -1,0 +1,59 @@
+version: 2
+
+models:
+  - name: int_orders_totals
+    description: "Modèle intermédiaire regroupant les ventes au niveau de la commande. Il calcule les volumes d'articles et les indicateurs financiers clés (brut, remises, net) par commande."
+    columns:
+      - name: order_id
+        description: "Identifiant unique de la commande (Clé primaire de ce modèle)."
+        tests:
+          - unique
+          - not_null
+
+      - name: customer_id
+        description: "Clé étrangère associant la commande à un client."
+        tests:
+          - not_null
+
+      - name: store_id
+        description: "Clé étrangère associant la commande à un magasin physique."
+        tests:
+          - not_null
+
+      - name: order_status
+        description: "Statut actuel de la commande (ex: En attente, Livré, Annulé)."
+        tests:
+          - not_null
+
+      - name: order_date
+        description: "Date de la commande."
+        tests:
+          - not_null
+
+      - name: required_date
+        description: "Date de livraison prévue par le client."
+        tests:
+          - not_null
+
+      - name: shipped_date
+        description: "Date d'expédition de la commande."
+
+      - name: total_items
+        description: "Nombre total d'articles uniques et cumulés achetés dans cette commande."
+        tests:
+          - not_null
+
+      - name: total_amount
+        description: "Montant brut total de la commande avant l'application des remises."
+        tests:
+          - not_null
+
+      - name: total_discount_amount
+        description: "Montant total cumulé de la remise accordée sur l'ensemble de la commande."
+        tests:
+          - not_null
+
+      - name: total_net_amount
+        description: "Montant net final payé par le client après déduction des remises (total_amount - total_discount_amount)."
+        tests:
+          - not_null
